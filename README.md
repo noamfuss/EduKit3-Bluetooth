@@ -53,7 +53,7 @@ It will have the word "Nintendo" in it if you are using an official controller.
 The next thing to do is to make sure that Python can connect to the controller.
 For this, we use a library called `cwiid`. Install it using the following:
 
-`sudo apt-get install python-cwiid`
+`sudo apt-get install python3-cwiid`
 
 Now, get the code from this repository:
 
@@ -65,7 +65,7 @@ Change folder:
 
 Run the test
 
-`python wii_remote_test.py`
+`python3 wii_remote_test.py`
 
 When the script tells you to, press the 1+2 buttons on your Wii remote.
 It should connect properly. If it doesn't work, try a bit closer or a bit
@@ -78,7 +78,7 @@ First of all, turn your motor battery pack on!
 
 Now, run the controller script:
 
-`python wii_controller.py`
+`python3 wii_controller.py`
 
 Follow the instructions to pair the Wii controller again.
 Once it has paired, you should find that your robot responds to the arrow
@@ -93,7 +93,7 @@ female header marked GND. Insert the longer, positive, leg into the pin marked
 
 Run the script again:
 
-`python wii_controller.py`
+`python3 wii_controller.py`
 
 This time, you should notice the LED lighting up when pairing begins
 and flashing when the controller is connected. Useful, especially
@@ -114,7 +114,7 @@ Now, open up a terminal and type the following:
 
 At the bottom of the file, add the following:
 
-`@/usr/bin/python /home/pi/EduKit3-bluetooth/wii_controller.py`
+`@/usr/bin/python3 /home/pi/EduKit3-bluetooth/wii_controller.py`
 
 Reboot your Pi:
 `sudo reboot`

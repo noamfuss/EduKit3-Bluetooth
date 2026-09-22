@@ -70,7 +70,7 @@ GPIO.output(PIN_LED, 0)
 
 button_delay = 0.1
 
-print 'Press 1 + 2 on your Wii Remote now ...'
+print('Press 1 + 2 on your Wii Remote now ...')
 GPIO.output(PIN_LED, 1)
 time.sleep(1)
 
@@ -81,15 +81,15 @@ try:
     GPIO.output(PIN_LED, 0)
 
 except RuntimeError:
-    print "Error opening wiimote connection"
+    print("Error opening wiimote connection")
     GPIO.output(PIN_LED, 0)
     # Uncomment this line to shutdown the Pi if pairing fails
     #os.system("sudo halt")
     quit()
 
-print 'Wii Remote connected...\n'
-print 'Press some buttons!\n'
-print 'Press PLUS and MINUS together to disconnect and quit.\n'
+print('Wii Remote connected...\n')
+print('Press some buttons!\n')
+print('Press PLUS and MINUS together to disconnect and quit.\n')
 
 for x in range(0,3):
     GPIO.output(PIN_LED, 1)
@@ -106,7 +106,7 @@ while True:
     # If Plus and Minus buttons pressed
     # together then rumble and quit.
     if (buttons - cwiid.BTN_PLUS - cwiid.BTN_MINUS == 0):  
-        print '\nClosing connection ...'
+        print('\nClosing connection ...')
         wii.rumble = 1
         GPIO.output(PIN_LED, 1)
         time.sleep(1)
@@ -119,22 +119,22 @@ while True:
     # doing a bitwise AND of the buttons number
     # and the predefined constant for that button.
     if (buttons & cwiid.BTN_LEFT):
-        print 'Left pressed'
+        print('Left pressed')
         Left()
         time.sleep(button_delay)         
 
     elif(buttons & cwiid.BTN_RIGHT):
-        print 'Right pressed'
+        print('Right pressed')
         Right()
         time.sleep(button_delay)          
 
     elif (buttons & cwiid.BTN_UP):
-        print 'Up pressed' 
+        print('Up pressed')
         Forwards()       
         time.sleep(button_delay)          
     
     elif (buttons & cwiid.BTN_DOWN):
-        print 'Down pressed'      
+        print('Down pressed')
         Backwards()
         time.sleep(button_delay)  
     

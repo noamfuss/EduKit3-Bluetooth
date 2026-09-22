@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python3
 #+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 #|R|a|s|p|b|e|r|r|y|P|i|-|S|p|y|.|c|o|.|u|k|
 #+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
@@ -27,7 +27,7 @@ import time
 
 button_delay = 0.1
 
-print 'Press 1 + 2 on your Wii Remote now ...'
+print('Press 1 + 2 on your Wii Remote now ...')
 time.sleep(1)
 
 # Connect to the Wii Remote. If it times out
@@ -35,12 +35,12 @@ time.sleep(1)
 try:
   wii=cwiid.Wiimote()
 except RuntimeError:
-  print "Error opening wiimote connection"
+  print("Error opening wiimote connection")
   quit()
 
-print 'Wii Remote connected...\n'
-print 'Press some buttons!\n'
-print 'Press PLUS and MINUS together to disconnect and quit.\n'
+print('Wii Remote connected...\n')
+print('Press some buttons!\n')
+print('Press PLUS and MINUS together to disconnect and quit.\n')
 
 wii.rpt_mode = cwiid.RPT_BTN
  
@@ -51,7 +51,7 @@ while True:
   # If Plus and Minus buttons pressed
   # together then rumble and quit.
   if (buttons - cwiid.BTN_PLUS - cwiid.BTN_MINUS == 0):  
-    print '\nClosing connection ...'
+    print('\nClosing connection ...')
     wii.rumble = 1
     time.sleep(1)
     wii.rumble = 0
@@ -61,51 +61,51 @@ while True:
   # doing a bitwise AND of the buttons number
   # and the predefined constant for that button.
   if (buttons & cwiid.BTN_LEFT):
-    print 'Left pressed'
+    print('Left pressed')
     time.sleep(button_delay)         
     #io.output(2, True)
 
   if(buttons & cwiid.BTN_RIGHT):
-    print 'Right pressed'
+    print('Right pressed')
     time.sleep(button_delay)          
     #io.output(3, True)
 
   if (buttons & cwiid.BTN_UP):
-    print 'Up pressed'        
+    print('Up pressed')
     time.sleep(button_delay)          
     #io.output(4, True)
     
   if (buttons & cwiid.BTN_DOWN):
-    print 'Down pressed'      
+    print('Down pressed')
     time.sleep(button_delay)  
     #io.output(17, True)
     
   if (buttons & cwiid.BTN_1):
-    print 'Button 1 pressed'
+    print('Button 1 pressed')
     time.sleep(button_delay)          
 
   if (buttons & cwiid.BTN_2):
-    print 'Button 2 pressed'
+    print('Button 2 pressed')
     time.sleep(button_delay)          
 
   if (buttons & cwiid.BTN_A):
-    print 'Button A pressed'
+    print('Button A pressed')
     time.sleep(button_delay)          
     #for i in pins:
       #io.output(i, False)    
 
   if (buttons & cwiid.BTN_B):
-    print 'Button B pressed'
+    print('Button B pressed')
     time.sleep(button_delay)          
 
   if (buttons & cwiid.BTN_HOME):
-    print 'Home Button pressed'
+    print('Home Button pressed')
     time.sleep(button_delay)           
     
   if (buttons & cwiid.BTN_MINUS):
-    print 'Minus Button pressed'
+    print('Minus Button pressed')
     time.sleep(button_delay)   
     
   if (buttons & cwiid.BTN_PLUS):
-    print 'Plus Button pressed'
+    print('Plus Button pressed')
     time.sleep(button_delay)
